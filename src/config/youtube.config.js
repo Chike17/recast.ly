@@ -1,1 +1,3 @@
-window.YOUTUBE_API_KEY = 'AIzaSyAi3VeI-2QerEM4g2xxGSRohj-YG6U7SXQ'; 
+window.YOUTUBE_API_KEY = 'Please e-mail chike.onuorah@gmail.com for access to the API KEY. Subject line: Need your YOUTUBE API KEY.'
+
+
