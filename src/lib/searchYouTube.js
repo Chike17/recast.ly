@@ -7,7 +7,8 @@ async function searchYouTube (options, callback) {
           maxResults: options.max,
           part: 'snippet',
           type: 'video',
-          key: options.key
+          key: options.key,
+          format: 5
       },
       contentType: 'application/json',
     });
