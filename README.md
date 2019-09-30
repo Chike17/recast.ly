@@ -7,9 +7,7 @@ will automatically open up on your browser.
 
 3. Make sure no other app is running on port 8080.
 
-4. Email chike.onuorah@gmail.com to gain access to the API KEY
+4. Place the API KEY in the src/config/youtube.config file
 
-5. Place the API KEY in the src/config/youtube.config file
-
-6. The search bar will automatically update the videos as you type
+5. The search bar will automatically update the videos as you type
 in a query. 
