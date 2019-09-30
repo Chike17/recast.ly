@@ -7,7 +7,5 @@ will automatically open up on your browser.
 
 3. Make sure no other app is running on port 8080.
 
-4. Place the API KEY in the src/config/youtube.config file
-
-5. The search bar will automatically update the videos as you type
+4. The search bar will automatically update the videos as you type
 in a query. 
