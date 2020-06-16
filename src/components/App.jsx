@@ -4,9 +4,8 @@ class App extends React.Component {
     this.state = {
       video: window.exampleVideoData[0],
       videos: window.exampleVideoData,
-      query: 'The Roots Live Performance'
+      query: 'The Roots Live Performance',
     };
-    // this.setVideos();
   }
   componentDidMount() {
     console.log('this should log before the other one');
@@ -14,7 +13,7 @@ class App extends React.Component {
   }
   playVideo(video) {
     this.setState({
-      video: video
+      video: video,
     });
   }
   setVideos() {
@@ -26,54 +25,35 @@ class App extends React.Component {
     this.props.searchYouTube(options, this.callback.bind(this));
   }
   callback(data) {
-    // console.log(this);
-    this.setState({video: data[0] });
-    this.setState({'videos': data});
+    this.setState({ video: data[0] });
+    this.setState({ videos: data });
   }
-  search(e) { 
-    // console.log(e.target.value);
-    // console.log(Object.keys(e));
+  search(e) {
     this.setState({
-      query: e.target.value
+      query: e.target.value,
     });
     _.debounce(this.setVideos.bind(this), 500)();
-    // this.setVideos();
   }
   render() {
     return (
       <div>
-        <Nav query={this.search.bind(this)}/>
+        <Nav query={this.search.bind(this)} />
 
-          <div className = "video-wrapper">
+        <div className="video-wrapper">
+          <div className="col-md-7">
+            <VideoPlayer video={this.state.video} />
+          </div>
 
-            <div className = "col-md-7">
-            <VideoPlayer video={this.state.video}/>
-            </div>
-
-            <div className = "col-md-7">
-            <VideoList playVideo={this.playVideo.bind(this)} videos={this.state.videos}/>
-            </div>
-
-         </div>
-
-       </div>
+          <div className="col-md-7">
+            <VideoList
+              playVideo={this.playVideo.bind(this)}
+              videos={this.state.videos}
+            />
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
-// var App = (props) => (
-//   <div>
-//     <Nav />
-//     <div className="col-md-7">
-//       <VideoPlayer/>
-//     </div>
-//     <div className="col-md-5">
-//       <VideoList videos={props.videos}/>
-//     </div>
-//   </div>
-// );
-
-
-// In the ES6 spec, files are "modules" and do not share a top-level scope
-// `var` declarations will only exist globally where explicitly defined
 window.App = App;
