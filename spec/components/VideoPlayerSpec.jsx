@@ -89,19 +89,12 @@ describe('VideoPlayer', function () {
       superCuteCatVideo,
       'video-player-details'
     );
-    var hackReactorVideoDescriptionElement = findRenderedDOMComponentWithClass(
-      hackReactorVideo,
-      'video-player-details'
-    );
 
     expect(cuteCatVideoDescriptionElement.children[1].innerHTML).to.equal(
       'The best cat video on the internet!'
     );
     expect(superCuteCatVideoDescriptionElement.children[1].innerHTML).to.equal(
       'Better than the best cat video on the internet!'
-    );
-    expect(hackReactorVideoDescriptionElement.children[1].innerHTML).to.equal(
-      'Watch the ribbon cutting of the first coding bootcamp in space'
     );
   });
 });
